@@ -28,7 +28,7 @@ jobs:
         uses: Azure/aci-deploy@users/kapasrij/releaseChanges
         with:
           # Name of the Resource Group in which the Container Instance will be created
-          resource-group: kptestrg101
+          resource-group: ACI-DEPLOY
 
           # The DNS Name Label for Container with Public IP
           dns-name-label: kp-url-for-container
@@ -39,7 +39,7 @@ jobs:
           location: 'centralus'
 
           # Name of the Container Group Instance
-          name: kp-name-of-instance
+          name: aci-deploy-test
 
 
 
