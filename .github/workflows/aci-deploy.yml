@@ -45,7 +45,7 @@ jobs:
           location: 'centralus'
 
           # Name of the Container Group Instance
-          name: aci-deploy-test
+          name: aci-deploy-test2
 
 
 
