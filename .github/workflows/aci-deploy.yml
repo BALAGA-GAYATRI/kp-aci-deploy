@@ -39,13 +39,13 @@ jobs:
 #           dns-name-label: kp-url-for-container
           resource-group: ACI-DEPLOY
           ip-address: Private
-          network-profile-id: '/subscriptions/c94bda7a-0577-4374-9c53-0e46a9fb0f70/resourceGroups/ACI-DEPLOY/providers/Microsoft.Network/networkProfiles/aci-deploy-test2-networkProfile'
+          network-profile-id: '/subscriptions/c94bda7a-0577-4374-9c53-0e46a9fb0f70/resourceGroups/ACI-DEPLOY/providers/Microsoft.Network/networkProfiles/aci-deploy-test3-networkProfile'
           # Specify the fully qualified container image name. For example, "myregistry.azurecr.io/nginx:latest" or "python:3.7.2-alpine/"
           image: nginx
           location: 'centralus'
 
           # Name of the Container Group Instance
-          name: aci-deploy-test2
+          name: aci-deploy-test3
 
 
 
