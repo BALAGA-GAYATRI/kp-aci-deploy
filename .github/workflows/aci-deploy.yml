@@ -24,18 +24,16 @@ jobs:
           # Paste output of `az ad sp create-for-rbac` as value of secret variable: AZURE_CREDENTIALS
           creds: ${{ secrets.AZURE_CREDENTIALS }}
       - name: create virtual network
+        id: networkprofile
         uses: Azure/cli@v1
         with:
-          # Paste output of `az ad sp create-for-rbac` as value of secret variable: AZURE_CREDENTIALS
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
-          
+            inlineScript: |
+              az network vnet create -g ACI-DEPLOY -n aci-deploy-vnet-test
+
+
 #       - name: Deploy to Azure Container Instances
 #         uses: Azure/aci-deploy@release-bug-fix
 #         with:
-#           inlineScript: |
-#               az network vnet create -g ACI-DEPLOY -n aci-deploy-vnet-test
-
-
 #           # The DNS Name Label for Container with Public IP
 # #           dns-name-label: kp-url-for-container
 #           ip-address: Private
