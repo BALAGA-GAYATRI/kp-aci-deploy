@@ -25,7 +25,7 @@ jobs:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
       - name: Deploy to Azure Container Instances
-        uses: Azure/aci-deploy@users/kapasrij/releaseChanges
+        uses: Azure/aci-deploy@release-bug-fix
         with:
           # Name of the Resource Group in which the Container Instance will be created
           resource-group: ACI-DEPLOY
