@@ -23,23 +23,29 @@ jobs:
         with:
           # Paste output of `az ad sp create-for-rbac` as value of secret variable: AZURE_CREDENTIALS
           creds: ${{ secrets.AZURE_CREDENTIALS }}
-
-      - name: Deploy to Azure Container Instances
-        uses: Azure/aci-deploy@release-bug-fix
+      - name: create virtual network
+        uses: Azure/cli@v1
         with:
-          # Name of the Resource Group in which the Container Instance will be created
-          resource-group: ACI-DEPLOY
+          # Paste output of `az ad sp create-for-rbac` as value of secret variable: AZURE_CREDENTIALS
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+          
+#       - name: Deploy to Azure Container Instances
+#         uses: Azure/aci-deploy@release-bug-fix
+#         with:
+#           inlineScript: |
+#               az network vnet create -g ACI-DEPLOY -n aci-deploy-vnet-test
 
-          # The DNS Name Label for Container with Public IP
-#           dns-name-label: kp-url-for-container
-          ip-address: Private
-          # Specify the fully qualified container image name. For example, "myregistry.azurecr.io/nginx:latest" or "python:3.7.2-alpine/"
-          image: nginx
 
-          location: 'centralus'
+#           # The DNS Name Label for Container with Public IP
+# #           dns-name-label: kp-url-for-container
+#           ip-address: Private
+#           # Specify the fully qualified container image name. For example, "myregistry.azurecr.io/nginx:latest" or "python:3.7.2-alpine/"
+#           image: nginx
 
-          # Name of the Container Group Instance
-          name: aci-deploy-test
+#           location: 'centralus'
+
+#           # Name of the Container Group Instance
+#           name: aci-deploy-test
 
 
 
